@@ -1,0 +1,27 @@
+<% include headerAdmin.ejs%>
+<div class="centerDiv">
+	<div id="infoProfile">
+		<div id="userImage">
+			<img  src="images/userImages/<%=data.imgsrc%>">
+		</div>
+		
+
+			<h1><%=data.name%> <%=data.surname%></h1>
+			<table >
+		<tr style="border:1px;font-weight: bold;font-family: cursive;">
+			<td>Level</td>
+			<td>Age</td>
+			<td>Phone</td>
+		</tr>
+		<tr style="color:white">
+				<td><p><%=data.age%></p></td>
+				<td><p><%=data.level%></p></td>
+				<td><p><%=data.phone%></p></td>
+		</tr>
+		</table>
+		<button id="userPageEdit">
+			<a style="color:black;text-decoration: none;" href="/editUser?userId=<%=data.id%>">Edit</a>
+		</button>
+	</div>
+</div>
+<% include footer.ejs%>

@@ -1,0 +1,29 @@
+<% include headerAdmin.ejs%>
+<div class="centerDiv">
+	
+	<form id ="updateUser" action="/updateUser" method="post">
+			name
+			<br>
+		<input name="name" value = "<%=data.name%>" type="text">
+		<br>
+		surname
+		<br>
+		<input name="surname" value = "<%=data.surname%>" type="text">
+		<br>
+		age
+		<br>
+		<input name="age"  value = "<%=data.age%>" type="text">
+		<br>
+		phone
+		<br>
+		<input name="phone" value = "<%=data.phone%>" type="text">
+		<br>
+		level
+		<br>
+		<input name="level" value = "<%=data.level%>" type="text">
+		<br>
+		<input name="id" type="hidden" value="<%=data.id%>">
+		<button>Update</button>
+	</form>
+</div>
+<% include footer.ejs%>

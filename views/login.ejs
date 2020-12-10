@@ -1,0 +1,32 @@
+
+
+
+
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<h2>It Managment</h2> 
+		
+	<div id="praw">
+		<div id ="form">
+			<p>Մուտք</p>
+		<form class ="form_1" action="/loginUser" method="post">
+			<input placeholder=" Էլ․փոստի հասցե (email)" type="text" name = "login">
+			<br>
+			<br>
+			<input placeholder=" Գաղտնաբառ" type="text" name = "password">
+			<br>
+			<br>
+			<button>Մուտք</button>
+			<br>
+			<br>
+		</form>
+	</div>
+	<div id ="lg">
+	</div>
+			<% if(err){%>
+
+			<h3 id ="error"><%= err %></h3>
+			<% delete req.session.err %>
+			<% }%>
+
+
+	</div>

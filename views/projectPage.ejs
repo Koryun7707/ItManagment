@@ -1,0 +1,98 @@
+<% include headerAdmin%>
+<div class="centerDiv">
+	<button id="deleteProject">
+	delete
+	<!-- <a href="/projects" style="text-decoration: none;color:black;">Delete</a> -->
+	</button>
+
+
+    <table class="table table-border table-hover table-dark table-bordered"
+    id="tab">
+    	<tr>
+    		<th>Name</th>
+    		<td><%=data.name%></td>
+    	</tr>
+    		<tr>
+    			<th>Price</th>
+    			<td><%=data.price%></td>
+    		</tr>
+    		<tr>
+    			<th>Knowledge</th>
+    			<td><%=data.knowledge%></td>
+    		</tr>
+    		<tr>
+    			<th>Description</th>
+    			<td><%=data.description%></td>
+    		</tr>
+    		<tr>
+    			<th>Type</th>
+    			<td><%=data.type%></td>
+    		</tr>
+    		<tr>
+    			<th>DeadLine</th>
+    			<td><%=data.deadLine%></td>
+    		</tr>
+    </table>
+  		<div id="userProjectInformation">
+	    	<%data.projUsers.forEach(function(temp){%>
+	    	<div class="userDeleteDiv">
+	    	<li id="liProj" ><%= temp.name+" "+ temp.surname+" ("+temp.level+")"%></li>
+			<img id ="projUserImage" src="/images/userImages/<%=temp.imgsrc%>" alt="">
+			<button class="deleteProjUser" projId=<%=data.id%> userId="<%=temp.id%>">
+				Delete
+			</button>
+			</div>
+			<% }) %>
+	    </div>
+
+      <div id="d1">
+		    		<form id ="updateProj" action="/updateProj" method="post">
+				name
+				<br>
+			<input name="name" value = "<%=data.name%>" type="text">
+			<br>
+			price
+			<br>
+			<input name="price" value = "<%=data.price%>" type="text">
+			<br>
+			knowledge
+			<br>
+			<input name="knowledge"  value = "<%=data.knowledge%>" type="text">
+			<br>
+			description
+			<br>
+			<input name="description" value = "<%=data.description%>" type="text">
+			<br>
+			type
+			<br>
+			<input name="type" value = "<%=data.type%>" type="text">
+			<br>
+			deadLine
+			<br>
+			<input name="deadLine" value = "<%=data.deadLine%>" type="text">
+			<br>
+			<input name="id" id="proyectiId" type="hidden" value="<%=data.id%>">
+			<br>
+			<div>
+				<h3>addPeople</h3>
+				<div id="checkBoxDiv2" class="col-75">
+				
+				
+					<% allPeople.forEach(function(item){%>
+					<%if(item.id){%>
+					<div class="checkBoxDiv">
+					<img class="checkImg" src="/images/userImages/<%=item.imgsrc%>">
+					<input  class="check" value="<%=item.id%>" type="checkbox" name="people">
+					<div id="anunner">
+					 <%=item.name+" "+item.surname+" ("+item.level+")"%> </div>
+					 </div>
+					 <%}%>
+					<%}) %>
+					 				
+			</div>
+			</div>
+			<button>Update</button>
+	</form>
+
+</div>
+</div>

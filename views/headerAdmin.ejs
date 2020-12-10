@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/headerAdmin.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+  <script src = "js/admin.js"></script>
+  <script src = "js/user.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<div id="praw_1">
+		
+		<!-- <p>Hello <br>Managment</p>
+		<button  class="btn btn-info btn-lg" >
+			<a style="color:white;text-decoration: none; " href="/logOut">LogOut</a></button>
+		<div id ="searchDiv">
+		<input onclick="mouseDown()" type="text" placeholder="search" id ="search">
+		</div> -->
+		<p>Hello Managment</p>
+		
+		
+		 <div id ="searchDiv"> 
+			 <input onclick="mouseDown()" type="text" placeholder="search" id ="search"> 
+		 </div>  
+
+			<button class="btn btn-info " id="notifButton">Notification</button>
+		 <div id="notifDiv">
+		 	
+		 </div>
+		<div myId = "<%=admin.id%>" id="messagesDiv">Messages(0)</div>
+
+		<button id="logOut" class="btn btn-info btn-lg" >
+			<a style="color:white;text-decoration: none; " href="/logOut">LogOut</a>
+		</button>
+	</div>
+
+
+<!-- <link rel="stylesheet" type="text/css" href="/public/css/menu_admin.css"> -->
+<div id ="praw_2">
+	<div >
+		<a href="/home">
+		<img id ="imgAdmin" src="/images/userImages/<%=admin.imgsrc%>">
+		</a>
+	</div>
+	<!-- <div id ="btn"> -->
+	<div id="info_user">
+		<h1><%= admin.name + " " + admin.surname%> </h1>
+		<br>
+	</div>
+	<button id ="first"><a href="/home" style=" color:white;text-decoration: none;">Home</a></button>
+	<br>
+	<button><a href="/allUsers" style="color:white;text-decoration: none;">All Users</a></button>
+	
+	<br>
+	<button><a href="/addNewProject" style="color:white;text-decoration: none;">Add Project</a></button>
+	<br>
+	<button><a href="/projects" style="color:white;text-decoration: none;">Projects</a></button>
+	<br>
+	<button><a href="/addNewUser" style="color:white;text-decoration: none;">New User</a></button>
+	<br>
+	<!-- </div> -->
+</div>
+
+<!-- ///////////////////////////////////// -->
+	

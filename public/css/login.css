@@ -1,0 +1,91 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background:url('../images/bg_1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+h2{
+	font-size:45px;
+	color:white;
+	font-family: cursive;
+	text-align: center;
+}
+h1{
+	font-size:55px;
+}
+#lg{
+	width: 546px;
+	height: 328px;
+	background:black;
+	opacity: 0.5;
+	left:0;
+	right: 0;
+	margin:auto;
+	margin-top:20%;
+	border-radius: 5px;
+
+	
+}
+#praw{
+	width: 546px;
+	height: 328px;
+	left:0;
+	right: 0;
+	margin:auto;
+	position: relative;
+	z-index: 1;
+}
+#form{
+	position: absolute;
+	z-index: 10;
+	margin-top: 100px;
+
+}
+#form input{
+	margin: 5px;
+	width:520px;
+	height: 50px;
+	border-radius: 5px; 
+	padding-left:15px;
+	font-size:20px;
+}
+#form p {
+	color: white;
+	text-align: center;
+	font-size:50px;
+	margin-top: -75px;
+
+}
+#form button{
+	margin: 10px;
+	width: 520px;
+	height: 50px;
+	opacity: 0.5;
+	background-color: none;
+	border:1px solid white;
+	color:black;
+	font-size:15px;
+	font-weight: bold;
+     border-radius: 5px;
+}
+#form button:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+#error{
+	font-size:15px;
+	font-weight: bold;
+	font-family: sans-serif;
+	color:red;
+	/*margin: 20px;*/
+	/*padding-top: -20px;
+	padding-left:18px;*/
+	margin-top: -103px;
+	/*padding-bottom:15px;*/
+	margin-left: 15px;
+	z-index: 15;
+	position: absolute;
+}

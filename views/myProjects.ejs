@@ -1,0 +1,28 @@
+<% include headerUser.ejs%>
+<div class="centerDiv" >
+	<table class="table table-hover">
+
+		<tr>
+			<td>Name</td>
+			<td>Price</td>
+			<td>Knowledge</td>
+			<td>Description</td>
+			<td>Type</td>
+			<td>DeadLine</td>
+		</tr>
+
+		<% proj.forEach(function(item){%>
+			<tr projId=<%=item.id%>>
+				<th><%=item.name%></th>
+				<th><%=item.price%></th>
+				<th><%=item.knowledge%></th>
+				<th><%=item.description%></th>
+				<th><%=item.type%></th>
+				<th><%=item.deadLine%></th>
+				<th><button myId=<%=user.id%> userName=<%=user.name%> projId=<%=item.id%> class ="deadButton">Dead</button></th>
+			</tr>
+		<%})%>
+			
+	</table>
+</div>
+<% include footer.ejs%>

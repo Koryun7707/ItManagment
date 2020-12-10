@@ -1,0 +1,38 @@
+<% include headerAdmin.ejs%>
+<div class="centerDiv">
+		<table class="table table-hover table-bordered table-dark allProjects">
+	<tr>
+		<th>Name</th>
+		<th>price</th>
+		<th>knowledge</th>
+		<th>description</th>
+		<th>type</th>
+		<th>deadline</th>
+		<th>projUsers</th>
+	</tr>
+	<% data.forEach(function(item){ %>
+
+	<tr id="trId" projId = "<%=item.id %>">
+		
+		
+		<td><%=item.name%></td>
+		<td><%=item.price%></td>
+		<td><%=item.knowledge%><br></td>
+		<td><%=item.description%></td>
+		<td><%=item.type%></td>
+		<td><%=item.deadLine%></td>
+
+		<td>
+			<% item.projUsers.forEach(function(temp){ %>
+
+				<li id="liProj" ><%= temp.name+" "+ temp.surname+" ("+temp.level+")"%></li>
+				<img id ="projUserImage" src="/images/userImages/<%=temp.imgsrc%>" alt="">
+				
+			<% }) %>	
+		</td>
+	</tr>
+	
+	<% })%>
+</table>
+</div>
+<% include footer.ejs%>

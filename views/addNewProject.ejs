@@ -1,0 +1,81 @@
+<% include headerAdmin.ejs%>
+<div class="centerDiv">
+	
+<h1 style="text-align: center;">Add project</h1>
+<form action="addSingleNewProject" id="projectForm" method="post">
+	
+		<div class="row">
+			<div class="col-25">
+				<label>Name</label>
+			</div>
+			<div class="col-75">
+				<input id="name" type="" name="name">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label>Price</label>
+			</div>
+			<div class="col-75">
+				<input id="name" type="" name="price">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label>Knowledge</label>
+			</div>
+			<div class="col-75">
+				<input id="name" type="" name="knowledge">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label>Deadline</label>
+			</div>
+			<div class="col-75">
+				<input id="name" type="date" name="deadLine">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label>Description</label>
+			</div>
+			<div class="col-75">
+				<textarea id="name" type="" name="description"></textarea> 
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label>Type</label>
+			</div>
+			<div class="col-75">
+				<select name="type">
+					<option>Project</option>
+					<option>Task</option>
+				</select>
+			</div>
+		</div>
+		<br>
+			<div class="row">
+			<div class="col-25">
+				<label>People</label>
+			</div>
+			<div id="checkBoxDiv" class="col-75">
+
+				
+					<% data.forEach(function(item){%>
+					<div class="checkBoxDiv">
+					<img class="checkImg" src="/images/userImages/<%=item.imgsrc%>">
+					<input  class="check" value="<%=item.id%>" type="checkbox" name="people">
+					 <%=item.name+" "+item.surname+" ("+item.level+")"%> 
+					 </div>
+					<%}) %>
+					<!-- <option>Task</option> -->
+				
+			</div>
+		</div>
+		<br>
+		<button class="btnAdd">AddProject</button>
+	</form>
+</div>
+<% include footer.ejs%>

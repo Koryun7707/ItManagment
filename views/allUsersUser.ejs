@@ -1,0 +1,42 @@
+<% include headerUser.ejs%>
+
+<div class="centerDiv">
+<table class="table table-hover table-bordered table-dark">
+	<tr>
+		<th>Image</th>
+		<th>Name Surname</th>
+		<th>Age</th>
+		<th>Level</th>
+		<th>Admin</th>
+		<th>Phone</th>
+	</tr>
+	<% data.forEach(function(item){ %>
+
+	
+	<tr userId = "<%=item.id %>">
+		<td>
+			<button  class="userPage">
+				<a href="/userPage?userId=<%=item.id%>">
+				<img id ="allUsersImg" src="images/userImages/<%=item.imgsrc%>" >
+				</a>
+			</button>
+		</td>
+		<td><%=item.name+" "+item.surname%></td>
+		<td><%=item.age%></td>
+		<td><%=item.level%></td>
+		<td><%=item.admin%></td>
+		<td><%=item.phone%></td>
+		<td>
+			<button myId="<%=user.id%>" class ="sms">
+				<img src="images/msg.jpg">
+			</button>
+		</td>
+		
+
+	</tr>
+	
+	<% })%>
+</table>
+</div>
+<% include footer.ejs%>
+

@@ -1,0 +1,66 @@
+<% include headerAdmin.ejs%>
+
+<div class="centerDiv">
+<table class="table table-hover table-bordered table-dark">
+	<tr>
+		<th>Image</th>
+		<th>Name Surname</th>
+		<th>Age</th>
+		<th>Level</th>
+		<th>Admin</th>
+		<th>Phone</th>
+		<th>Reyting</th>
+	</tr>
+	<% data.forEach(function(item){ %>
+
+	
+	<tr userId = "<%=item.id %>">
+		<td>
+			<button  class="userPage">
+				<a href="/userPage?userId=<%=item.id%>">
+				<img id ="allUsersImg" src="images/userImages/<%=item.imgsrc%>" >
+				</a>
+			</button>
+		</td>
+		<td><%=item.name+" "+item.surname%></td>
+		<td><%=item.age%></td>
+		<td><%=item.level%></td>
+		<td><%=item.admin%></td>
+		<td><%=item.phone%></td>
+		<td><div id ="reyting">
+			<input type="radio" value='1' name=<%=item.name%>>1
+			<br>
+			<input type="radio" value='2' name=<%=item.name%>>2
+			<br>
+
+			<input type="radio" value='3' name=<%=item.name%>>3
+			<br>
+
+			<input type="radio" value='4' name=<%=item.name%>>4
+			<br>
+
+			<input type="radio" value='5' name=<%=item.name%>>5
+		</div></td>
+		<td>
+			<button myId="<%=admin.id%>" class ="sms">
+				<img src="images/msg.jpg">
+			</button>
+			<button class ="deleteBtn">Delete</button>
+			
+			<br>
+			<button class ="editUser">
+				<a style="color:black;text-decoration: none;" href="/editUser?userId=<%=item.id%>">Edit</a>
+			</button>
+			<button class="addProject">
+				<a style="color:black;text-decoration: none;" href="/addProject?userId=<%=item.id%>">addProject</a>
+			</button>
+
+		</td>
+
+	</tr>
+	
+	<% })%>
+</table>
+</div>
+<% include footer.ejs%>
+

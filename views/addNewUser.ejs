@@ -1,0 +1,48 @@
+<!-- <h1>Addnew user</h1> -->
+<%include headerAdmin.ejs%>
+<link rel="stylesheet" href="/public/css/headerAdmin.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div class="centerDiv">
+	<% if(err){%>
+	<h1><%=err%></h1>
+	<%} delete req.session.err%>
+	<div id="reg">
+		
+	<form id="addNewUser" action="/ByNewUser" method="POST" enctype="multipart/form-data">
+	
+		<!-- <label for="name">Name</label> -->
+		<input type="text" id="name" placeholder=" Name" name="name">
+		
+		
+		<!-- <label for="surname">Surname</label> -->
+		<input type="text" id="surname" placeholder=" Surname" name="surname">
+		
+		
+		<!-- <label for="age">Age</label> -->
+		<input type="text" id="age" placeholder=" Age" name="age">
+		
+		
+		<!-- <label for="phone">Phone</label> -->
+		<input type="text" id="phone" placeholder=" Phone Number" name="phone">
+		
+		
+		<!-- <label for="level">Level</label> -->
+		<input type="text" id="level" placeholder=" Level" name="level">
+	
+		
+		<!-- <label for="email">Email</label> -->
+		<input type="text" id="email" placeholder=" E-mail" name="email">
+
+		<!-- <label for="email">Email</label> -->
+		<input type="file" id="uploadImg" placeholder=" E-mail" name="uploadImg">
+		
+		
+		<!-- <label for="password">Password</label> -->
+		<input type="text" id="password" placeholder=" password" name="password">
+		<br>
+		<button id="addButton1">Add</button>
+
+	
+</div>
+</div>
+<% include footer.ejs%>
